@@ -122,9 +122,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\SignupModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\SignupDAL.cs" />
@@ -183,13 +185,18 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Signup.cshtml" />
     <Content Include="Views\Home\Signin.cshtml" />
-    <Content Include="Views\Shared\_AccoutsP.cshtml" />
     <Content Include="Views\Shared\_AccountsLayout.cshtml" />
     <Content Include="Views\Accounts\Contact.cshtml" />
     <Content Include="Views\Accounts\About.cshtml" />
     <Content Include="Views\Accounts\Index.cshtml" />
-    <Content Include="Views\Accounts\Signup.cshtml" />
     <Content Include="Views\Accounts\Signin.cshtml" />
+    <Content Include="Views\Shared\_ClientLayout.cshtml" />
+    <Content Include="Views\Client\RoomBooking.cshtml" />
+    <Content Include="Views\Client\CancelBooking.cshtml" />
+    <Content Include="Views\Client\BookingDetails.cshtml" />
+    <Content Include="Views\Client\EditProfile.cshtml" />
+    <Content Include="Views\Accounts\Signup.cshtml" />
+    <Content Include="Views\Client\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
