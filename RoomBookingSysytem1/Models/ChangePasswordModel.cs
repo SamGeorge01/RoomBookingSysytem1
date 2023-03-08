@@ -16,7 +16,7 @@ namespace RoomBookingSysytem1.Models
         public string NewPassword { get; set; }
         [Required(ErrorMessage = "Confirm Password is required.")]
         [DataType(DataType.Password)]
-        [Compare("Password", ErrorMessage = "Password and Confirm Password must match.")]
+        [Compare("NewPassword", ErrorMessage = "Password and Confirm Password must match.")]
         [Display(Name = "Confirm Password")]
         
         public string ConfirmPassword { get; set; }

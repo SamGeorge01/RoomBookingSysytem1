@@ -149,6 +149,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\images\C101.jpg" />
+    <Content Include="Content\images\H101.jpg" />
+    <Content Include="Content\images\H102.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
