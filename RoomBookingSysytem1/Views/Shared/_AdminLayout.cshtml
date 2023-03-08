@@ -2,30 +2,33 @@
 
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - botSense | Room Booking System</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("botSense | CRBS", "Index", "Client", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("botSense | CRBS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Room Booking", "RoomBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Cancel Booking", "CancelBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Booking Details", "BookingDetails", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Change Password", "ChangePassword", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Edit Profile", "EditProfile", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Home", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Add Room Details", "AddRoom", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Manage Room Details", "ManageRoom", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("View Booking Details", "BookingDetails", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Add New Admin", "NewAdmin", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Change Admin Password", "ChangeAdminPass", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 <div class="nav navbar-right" style="background-color: transparent">
-                    <h4 style="color: white">Welcome Sam</h4>
+                    <h4 style="color: white">Welcome Admin</h4>
                     <ul class="navbar-nav flex-grow-1">
                         <li>@Html.ActionLink("Logout", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     </ul>
@@ -40,7 +43,6 @@
             <p style="color:aliceblue">&copy; @DateTime.Now.Year - botSense | Room Booking System</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
