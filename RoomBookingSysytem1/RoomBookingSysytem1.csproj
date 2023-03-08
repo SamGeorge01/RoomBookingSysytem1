@@ -189,7 +189,6 @@
     <Content Include="Views\Accounts\Contact.cshtml" />
     <Content Include="Views\Accounts\About.cshtml" />
     <Content Include="Views\Accounts\Index.cshtml" />
-    <Content Include="Views\Accounts\Signin.cshtml" />
     <Content Include="Views\Shared\_ClientLayout.cshtml" />
     <Content Include="Views\Client\RoomBooking.cshtml" />
     <Content Include="Views\Client\CancelBooking.cshtml" />
@@ -197,6 +196,8 @@
     <Content Include="Views\Client\EditProfile.cshtml" />
     <Content Include="Views\Accounts\Signup.cshtml" />
     <Content Include="Views\Client\ChangePassword.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Accounts\Signin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

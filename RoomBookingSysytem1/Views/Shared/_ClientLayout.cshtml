@@ -18,12 +18,16 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Room Booking", "Index", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Cancel Booking", "About", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Booking Details", "Contacts", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Change Password", "Signup", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Edit Profile", "Signup", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Room Booking", "RoomBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Cancel Booking", "CancelBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Booking Details", "BookingDetails", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Change Password", "ChangePassword", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Edit Profile", "EditProfile", "Client", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
+                <div class="nav navbar-right" style="background-color: transparent">
+                    <h4 style="color: white">Welcome Sam</h4>
+                    <li>@Html.ActionLink("Logout", "RoomBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                </div>
             </div>
         </div>
     </nav>
