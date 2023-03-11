@@ -39,9 +39,16 @@ namespace RoomBookingSysytem1.Controllers
         {
             AccountsService accountsService = new AccountsService();
             clientModel = accountsService.SigninService(clientModel.Username, clientModel.Password);
-            if (clientModel.Username != null)
+            if (clientModel.UserType != null)
             {
-                return RedirectToAction("Index", "Client");
+                if (clientModel.Usertype==Client)
+                {
+                    return RedirectToAction("Index", "Client");
+                }
+                Else
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
             }
             return View();
         }
