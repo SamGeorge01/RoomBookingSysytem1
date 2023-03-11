@@ -9,27 +9,33 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body style="background-image: url('../../content/images/h102.jpg'); background-size: cover; color: white;">
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             @Html.ActionLink("botSense | CRBS", "Index", "Client", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Room Booking", "RoomBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Cancel Booking", "CancelBooking", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Booking Details", "BookingDetails", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Change Password", "ChangePassword", "Client", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Edit Profile", "EditProfile", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        @Html.ActionLink("Room Booking", "RoomBooking", "Client", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Cancel Booking", "CancelBooking", "Client", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Booking Details", "BookingDetails", "Client", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Change Password", "ChangePassword", "Client", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Edit Profile", "EditProfile", "Client", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Logout", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
                 </ul>
-                <div class="nav navbar-right" style="background-color: transparent">
-                    <h4 style="color: white">Welcome Sam</h4>
-                    <ul class="navbar-nav flex-grow-1">
-                        <li>@Html.ActionLink("Logout", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </nav>

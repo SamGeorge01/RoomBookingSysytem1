@@ -41,7 +41,7 @@ namespace RoomBookingSysytem1.Controllers
             clientModel = accountsService.SigninService(clientModel.Username, clientModel.Password);
             if (clientModel.Username != null)
             {
-                ViewBag.Message = "signin sucessfull";
+                return RedirectToAction("Index", "Client");
             }
             return View();
         }
