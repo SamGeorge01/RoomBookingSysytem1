@@ -8,7 +8,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="background-image: url('../../content/images/h102.jpg'); background-size: cover; color: white;">
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
             @Html.ActionLink("botSense | CRBS", "Index", "Client", new { area = "" }, new { @class = "navbar-brand" })
@@ -33,11 +33,17 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top: 80px">
         @RenderBody()
         <hr />
-        <footer>
-            <p style="color:aliceblue">&copy; @DateTime.Now.Year - botSense | Room Booking System</p>
+        <footer style="background-color:cadetblue; color:white; padding: 20px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="font-size: 14px; color: #333;">&copy; 2023 - botSense | Room Booking System</p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

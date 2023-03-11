@@ -6,7 +6,7 @@ using System.Web;
 
 namespace RoomBookingSysytem1.Models
 {
-    public class SignupModel
+    public class ClientModel
     {
         public int Id { get; set; }
 
@@ -24,6 +24,8 @@ namespace RoomBookingSysytem1.Models
         public DateTime DateOfBirth { get; set; }
 
         [Required(ErrorMessage = "Gender is required.")]
+        [Display(Name = "Gender")]
+        [UIHint("RadioButton")]
         public string Gender { get; set; }
 
         [Required(ErrorMessage = "Phone Number is required.")]
@@ -57,5 +59,8 @@ namespace RoomBookingSysytem1.Models
         [Compare("Password", ErrorMessage = "Password and Confirm Password must match.")]
         [Display(Name = "Confirm Password")]
         public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "User Type is required.")]
+        public string UserType { get; set; }
     }
 }

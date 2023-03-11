@@ -41,7 +41,7 @@ namespace RoomBookingSysytem1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Signup(SignupModel model)
+        public ActionResult Signup(ClientModel model)
         {
             if (ModelState.IsValid)
             {

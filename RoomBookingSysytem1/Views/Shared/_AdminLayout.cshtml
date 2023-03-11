@@ -10,10 +10,10 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+<body style="background-image: url('../../content/images/H101.jpg'); background-size: cover; color: white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top">
         <div class="container">
-            @Html.ActionLink("botSense | CRBS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("botSense | CRBS", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,12 +36,19 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top: 80px">
         @RenderBody()
         <hr />
-        <footer>
-            <p style="color:aliceblue">&copy; @DateTime.Now.Year - botSense | Room Booking System</p>
+        <footer style="background-color:cadetblue; color:white; padding: 20px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p style="font-size: 14px; color: #333;">&copy; 2023 - botSense | Room Booking System</p>
+                    </div>
+                </div>
+            </div>
         </footer>
+
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

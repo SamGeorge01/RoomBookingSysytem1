@@ -1,4 +1,5 @@
 ﻿using RoomBookingSysytem1.Models;
+using RoomBookingSysytem1.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,27 +34,35 @@ namespace RoomBookingSysytem1.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
+        public ActionResult Signin(ClientModel clientModel)
+        {
+            AccountsService accountsService = new AccountsService();
+            clientModel = accountsService.SigninService(clientModel.Username, clientModel.Password);
+            if (clientModel.Username != null)
+            {
+                ViewBag.Message = "signin sucessfull";
+            }
+            return View();
+        }
         public ActionResult Signup()
         {
-            ViewBag.States = GetStates();
             return View();
         }
 
-
         [HttpPost]
-        public ActionResult Signup(SignupModel model)
+        public ActionResult Signup(ClientModel clientModel)
         {
-            if (ModelState.IsValid)
+            AccountsService accountsService = new AccountsService();
+            string result = accountsService.SignupService(clientModel);
+            if (result == "User already exist")
             {
-                // Save the user details to the database
-                // Redirect to the Signin page on successful signup
-                return RedirectToAction("Signin");
+                ViewBag.Status = result.ToString();
+                return View();
             }
+            ViewBag.Status = result.ToString();
+            return RedirectToAction("Index", "Client");
 
-            // If the model state is not valid, show the Signup view with error messages
-            ViewBag.States = GetStates();
-            return View(model);
         }
 
         private List<SelectListItem> GetStates()

@@ -1,44 +1,57 @@
-﻿@model RoomBookingSysytem1.Models.SignupModel
+﻿@model RoomBookingSysytem1.Models.ClientModel
 
 @{
     ViewBag.Title = "Signin";
     Layout = "~/Views/Shared/_AccountsLayout.cshtml";
 }
-<body style="background-image: url('../../content/images/h101.jpg'); background-size: cover;">
-    <h2 style="color:white">Signin</h2>
-   
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
 
-        <div class="form-horizontal">
-            <h4 style="color:white">Already have an account? Sign in here!</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
+<body>
+    <section class="card" style="background-color: rgba(0, 0, 0, 0.5); color:azure">
+        <div class="card-body">
+            <h2 style="color:white">Signin</h2>
 
-            <div class="form-group" style="color:white">
-                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.UserType, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Sign in" class="btn btn-primary btn-lg" style="margin-top: 20px;" />
+                            <input type="reset" class="btn btn-primary btn-lg" style="margin-top: 20px;" />
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="form-group" style="color:white">
-                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Sign in" class="btn btn-primary btn-lg" style="margin-top: 20px;" />
-                    <input type="reset"  class="btn btn-primary btn-lg" style="margin-top: 20px;" />
-                </div>
-            </div>
+            }
         </div>
-    }
+    </section>
 </body>
+
+            
