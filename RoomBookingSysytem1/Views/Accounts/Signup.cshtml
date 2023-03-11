@@ -78,25 +78,25 @@
         </div>
 
         <div class="form-group">
-            <label for="state" class="control-label col-md-2">State:</label>
+            <label for="State" class="control-label col-md-2">State:</label>
             <div class="col-md-10">
-                <select id="state" class="form-control">
-                    <option value="">-- Select state --</option>
-                    <option value="KL">Kerala</option>
-                    <option value="KA">Karnataka</option>
-                    <option value="TN">Tamil Nadu</option>
-                </select>
+                @Html.DropDownListFor(m => m.State, new SelectList(new[]
+                {
+                    new SelectListItem { Value = "", Text = "-- Select state --" },
+                    new SelectListItem { Value = "KL", Text = "Kerala" },
+                    new SelectListItem { Value = "KA", Text = "Karnataka" },
+                    new SelectListItem { Value = "TN", Text = "Tamil Nadu" },
+                }, "Value", "Text"), new { @class = "form-control", id = "state" })
             </div>
         </div>
 
         <div class="form-group">
-            <label for="city" class="control-label col-md-2">City:</label>
+            <label for="City" class="control-label col-md-2">City:</label>
             <div class="col-md-10">
-                <select id="city" class="form-control" disabled>
-                    <option value="">-- Select city --</option>
-                </select>
+                @Html.DropDownListFor(m => m.City, Enumerable.Empty<SelectListItem>(), new { @class = "form-control", id = "city", disabled = "disabled" })
             </div>
         </div>
+
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
@@ -152,13 +152,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserType, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserType, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

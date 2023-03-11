@@ -6,6 +6,15 @@ using System.Web;
 
 namespace RoomBookingSysytem1.Models
 {
+    public enum State
+    {
+        [Display(Name = "Kerala")]
+        KL,
+        [Display(Name = "Karnataka")]
+        KA,
+        [Display(Name = "Tamil Nadu")]
+        TN
+    }
     public class ClientModel
     {
         public int Id { get; set; }
@@ -42,10 +51,13 @@ namespace RoomBookingSysytem1.Models
         public string Address { get; set; }
 
         [Required(ErrorMessage = "State is required.")]
+        [Display(Name = "State")]
         public string State { get; set; }
 
         [Required(ErrorMessage = "City is required.")]
+        [Display(Name = "City")]
         public string City { get; set; }
+
 
         [Required(ErrorMessage = "Username is required.")]
         public string Username { get; set; }

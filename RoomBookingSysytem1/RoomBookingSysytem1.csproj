@@ -128,6 +128,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AddRoomModel.cs" />
+    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,8 +189,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\Signup.cshtml" />
-    <Content Include="Views\Home\Signin.cshtml" />
     <Content Include="Views\Shared\_AccountsLayout.cshtml" />
     <Content Include="Views\Accounts\Contact.cshtml" />
     <Content Include="Views\Accounts\About.cshtml" />
