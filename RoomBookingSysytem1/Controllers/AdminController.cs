@@ -50,6 +50,42 @@ namespace RoomBookingSysytem1.Controllers
             return View();
         }
 
+        public ActionResult ManageRoom(int roomId)
+        {
+            // Retrieve room details from database
+            AddRoomService RoomManageModel = new AddRoomService().ManageRoom(roomId);
+
+            if (RoomManageModel == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(RoomManageModel);
+        }
+
+        [HttpPost]
+        public ActionResult ManageRoom(AddRoomModel RoomManageModel)
+        {
+            if (ModelState.IsValid)
+            {
+                // Update room details in the database
+                AddRoomService addroomService = new AddRoomService();
+                addroomService.ManageRoom(RoomManageModel);
+
+                // Save room image to server
+                if (RoomManageModel.ImageFile != null && RoomManageModel.ImageFile.ContentLength > 0)
+                {
+                    string fileName = System.IO.Path.GetFileName(RoomManageModel.ImageFile.FileName);
+                    string path = System.IO.Path.Combine(Server.MapPath("~/Content/Images/Rooms/"), fileName);
+                    RoomManageModel.ImageFile.SaveAs(path);
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View(RoomManageModel);
+        }
+
         public ActionResult BookingDetails()
         {
             return View();

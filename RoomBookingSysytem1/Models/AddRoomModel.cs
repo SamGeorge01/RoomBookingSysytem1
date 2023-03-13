@@ -9,8 +9,6 @@ namespace RoomBookingSysytem1.Models
 {
     public class AddRoomModel
     {
-        [Required(ErrorMessage = "Room ID is required.")]
-        [Display(Name = "Room ID")]
         public int RoomID { get; set; }
 
         [Required(ErrorMessage = "Room Name is required.")]

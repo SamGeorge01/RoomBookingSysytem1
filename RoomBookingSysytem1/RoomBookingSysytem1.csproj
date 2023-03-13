@@ -192,9 +192,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_AccountsLayout.cshtml" />
-    <Content Include="Views\Accounts\Contact.cshtml" />
-    <Content Include="Views\Accounts\About.cshtml" />
-    <Content Include="Views\Accounts\Index.cshtml" />
     <Content Include="Views\Shared\_ClientLayout.cshtml" />
     <Content Include="Views\Client\RoomBooking.cshtml" />
     <Content Include="Views\Client\CancelBooking.cshtml" />
