@@ -41,11 +41,12 @@ namespace RoomBookingSysytem1.Controllers
             clientModel = accountsService.SigninService(clientModel.Username, clientModel.Password);
             if (clientModel.UserType != null)
             {
-                if (clientModel.Usertype==Client)
+                if (clientModel.UserType=="Client")
                 {
+                    Session["Id"]=clientModel.Id;
                     return RedirectToAction("Index", "Client");
                 }
-                Else
+                else
                 {
                     return RedirectToAction("Index", "Admin");
                 }

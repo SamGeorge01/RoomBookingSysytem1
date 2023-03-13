@@ -8,7 +8,7 @@ using System.Web;
 
 namespace RoomBookingSysytem1.Service
 {
-    public class ChangePasswordService
+    public class ClientService
     {
         SqlConnection sqlCon = new SqlConnection("Data Source= 513RR4-MSI-GF63; Database=RoomBooking; Integrated Security=True; Connect timeout=30; Encrypt=False;");
 
@@ -20,7 +20,7 @@ namespace RoomBookingSysytem1.Service
                 SqlCommand cmd = new SqlCommand("UserDetailsMasterSP", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@StatementType", "UpdatePassword");
-                cmd.Parameters.AddWithValue("@Id", Id);
+                cmd.Parameters.AddWithValue("@userId", userId);
                 cmd.Parameters.AddWithValue("@oldPassword", oldPassword);
                 cmd.Parameters.AddWithValue("@newPassword", newPassword);
                 int result = cmd.ExecuteNonQuery();

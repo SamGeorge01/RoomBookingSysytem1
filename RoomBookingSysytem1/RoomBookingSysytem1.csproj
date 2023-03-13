@@ -132,6 +132,7 @@
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Class1.cs" />
     <Compile Include="Service\AccountsService.cs" />
     <Compile Include="Service\ClientService.cs" />
   </ItemGroup>

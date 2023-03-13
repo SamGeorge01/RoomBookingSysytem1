@@ -39,8 +39,9 @@ namespace RoomBookingSysytem1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var client = (ClientModel)Session["client"];
-                var result = ClientService.ChangePassword(client.Id, viewModel.OldPassword, viewModel.NewPassword);
+                int Id = Convert.ToInt32(Session["Id"]);
+                var clientService = new ClientService();
+                var result = clientService.ChangePassword(Id, viewModel.OldPassword.ToString(), viewModel.NewPassword.ToString());
 
                 if (result == "Password updated successfully")
                 {
