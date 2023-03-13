@@ -33,7 +33,7 @@ namespace RoomBookingSysytem1.Service
                     result = true;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // log or handle exception
             }
@@ -53,7 +53,7 @@ namespace RoomBookingSysytem1.Service
             return imageBytes;
         }
 
-        public bool UpdateRoom(AddRoomModel room)
+        public bool ManageRoom(AddRoomModel room)
         {
             bool result = false;
             try
@@ -82,7 +82,7 @@ namespace RoomBookingSysytem1.Service
                     result = true;
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 // log or handle exception
             }
