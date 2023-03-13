@@ -208,9 +208,9 @@
     <Content Include="Views\Admin\BookingDetails.cshtml" />
     <Content Include="Views\Admin\NewAdmin.cshtml" />
     <Content Include="Views\Admin\ChangeAdminPass.cshtml" />
-    <Content Include="Views\Admin\AddRoom.cshtml" />
     <Content Include="Views\Accounts\Signup.cshtml" />
     <Content Include="Views\Accounts\Signin.cshtml" />
+    <Content Include="Views\Admin\AddRoom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
