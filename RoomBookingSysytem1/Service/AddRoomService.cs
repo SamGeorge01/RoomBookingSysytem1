@@ -63,20 +63,13 @@ namespace RoomBookingSysytem1.Service
                     sqlCon.Open();
                     SqlCommand cmd = new SqlCommand("RoomDetails_CRUD", sqlCon);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@RoomID", room.RoomID);
+                    cmd.Parameters.AddWithValue("@RoomId", 1);
                     cmd.Parameters.AddWithValue("@RoomName", room.RoomName);
                     cmd.Parameters.AddWithValue("@RoomType", room.RoomType);
                     cmd.Parameters.AddWithValue("@NumberOfSeats", room.NumberOfSeats);
                     cmd.Parameters.AddWithValue("@Location", room.Location);
                     cmd.Parameters.AddWithValue("@Price", room.Price);
-                    if (room.ImageFile != null && room.ImageFile.ContentLength > 0)
-                    {
-                        cmd.Parameters.AddWithValue("@Image", ConvertImageToBytes(room.ImageFile));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@Image", room.ImageFile);
-                    }
+                    cmd.Parameters.AddWithValue("@Image", room.ImageData);
                     cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.ExecuteNonQuery();
                     result = true;

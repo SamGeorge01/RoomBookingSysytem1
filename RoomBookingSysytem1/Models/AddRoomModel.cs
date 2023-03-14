@@ -34,5 +34,6 @@ namespace RoomBookingSysytem1.Models
         [Required(ErrorMessage = "Image is required.")]
         [Display(Name = "Image")]
         public HttpPostedFileBase ImageFile { get; set; }
+        public string ImageData { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using RoomBookingSysytem1.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.ApplicationServices;
 using System.Web.Mvc;
@@ -25,6 +26,10 @@ namespace RoomBookingSysytem1.Controllers
         [HttpPost]
         public ActionResult AddRoom(AddRoomModel addroomModel)
         {
+            byte[] uploadedFile = new byte[addroomModel.ImageFile.InputStream.Length];
+            addroomModel.ImageFile.InputStream.Read(uploadedFile, 0, uploadedFile.Length);
+            
+            addroomModel.ImageData = Convert.ToBase64String(uploadedFile);
             if (ModelState.IsValid)
             {
                 // Save room details to the database
@@ -42,7 +47,7 @@ namespace RoomBookingSysytem1.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(addroomModel);
+            return View();
         }
   
         public ActionResult ManageRoom()
@@ -50,41 +55,32 @@ namespace RoomBookingSysytem1.Controllers
             return View();
         }
 
-        public ActionResult ManageRoom(string RoomName)
-        {
-            // Retrieve room details from database
-            AddRoomService addRoomService = new AddRoomService();
-            AddRoomModel roomManageModel = addRoomService.GetRoomByName(RoomName);
-
-            if (roomManageModel == null)
-            {
-                return RedirectToAction("Index");
-            }
-
-            return View(roomManageModel);
-        }
+      
 
         [HttpPost]
-        public ActionResult ManageRoom(AddRoomModel RoomManageModel)
+        public ActionResult ManageRoom(AddRoomModel roomManageModel)
         {
-            if (ModelState.IsValid)
-            {
-                // Update room details in the database
-                AddRoomService addRoomService = new AddRoomService();
-                addRoomService.ManageRoom(RoomManageModel);
+            byte[] uploadedFile = new byte[roomManageModel.ImageFile.InputStream.Length];
+            roomManageModel.ImageFile.InputStream.Read(uploadedFile, 0, uploadedFile.Length);
 
-                // Save room image to server
-                if (RoomManageModel.ImageFile != null && RoomManageModel.ImageFile.ContentLength > 0)
-                {
-                    string fileName = System.IO.Path.GetFileName(RoomManageModel.ImageFile.FileName);
-                    string path = System.IO.Path.Combine(Server.MapPath("~/Content/Images/Rooms/"), fileName);
-                    RoomManageModel.ImageFile.SaveAs(path);
-                }
+            roomManageModel.ImageData = Convert.ToBase64String(uploadedFile);
+            // Update room details in the database
+            AddRoomService addroomService = new AddRoomService();
+            
+            addroomService.ManageRoom(roomManageModel);
+            //if (roomManageModel.ImageFile != null && roomManageModel.ImageFile.ContentLength > 0)
+            //{
+            //    string fileName = System.IO.Path.GetFileName(roomManageModel.ImageFile.FileName);
+            //    string path = System.IO.Path.Combine(Server.MapPath("~/Content/Images/Rooms/"), fileName);
+            //    roomManageModel.ImageFile.SaveAs(path);
+            //}
+            //// Save room image to server
 
-                return RedirectToAction("Index");
-            }
 
-            return View(RoomManageModel);
+            //  return RedirectToAction("Index");
+
+
+            return View();
         }
 
         public ActionResult BookingDetails()
