@@ -7,13 +7,12 @@
 
 <section class="card" style="background-color: rgba(0, 0, 0, 0.5); color:azure">
     <div class="card-body">
-        <h2>NewAdmin</h2>
+        <h2>New Admin</h2>
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>AdminModel</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">

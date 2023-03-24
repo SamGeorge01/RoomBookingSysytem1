@@ -28,7 +28,7 @@ namespace RoomBookingSysytem1.Controllers
         {
             byte[] uploadedFile = new byte[addroomModel.ImageFile.InputStream.Length];
             addroomModel.ImageFile.InputStream.Read(uploadedFile, 0, uploadedFile.Length);
-            
+
             addroomModel.ImageData = Convert.ToBase64String(uploadedFile);
             if (ModelState.IsValid)
             {
@@ -49,13 +49,13 @@ namespace RoomBookingSysytem1.Controllers
 
             return View();
         }
-  
+
         public ActionResult ManageRoom()
         {
             return View();
         }
 
-      
+
 
         [HttpPost]
         public ActionResult ManageRoom(AddRoomModel roomManageModel)
@@ -66,7 +66,7 @@ namespace RoomBookingSysytem1.Controllers
             roomManageModel.ImageData = Convert.ToBase64String(uploadedFile);
             // Update room details in the database
             AddRoomService addroomService = new AddRoomService();
-            
+
             addroomService.ManageRoom(roomManageModel);
             //if (roomManageModel.ImageFile != null && roomManageModel.ImageFile.ContentLength > 0)
             //{
@@ -90,6 +90,21 @@ namespace RoomBookingSysytem1.Controllers
 
         public ActionResult NewAdmin()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewAdmin(AdminModel adminModel)
+        {
+            if (ModelState.IsValid)
+            {
+                // Save admin details to the database
+                AddAdminService addAdminService = new AddAdminService();
+                addAdminService.AddAdmin(adminModel);
+
+                return RedirectToAction("Index");
+            }
+
             return View();
         }
 
