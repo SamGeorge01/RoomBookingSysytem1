@@ -98,7 +98,7 @@ namespace RoomBookingSysytem1.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Save admin details to the database
+                
                 AddAdminService addAdminService = new AddAdminService();
                 addAdminService.AddAdmin(adminModel);
 

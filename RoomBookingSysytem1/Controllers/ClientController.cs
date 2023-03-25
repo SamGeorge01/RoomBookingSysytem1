@@ -46,7 +46,7 @@ namespace RoomBookingSysytem1.Controllers
                 if (result == "Password updated successfully")
                 {
                     ViewBag.SuccessMessage = result;
-                    return View();
+                    return RedirectToAction("Index","Client");
                 }
                 else
                 {
