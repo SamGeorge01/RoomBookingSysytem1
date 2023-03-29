@@ -8,7 +8,7 @@
 
 <section class="card" style="background-color: rgba(0, 0, 0, 0.5); color:azure">
     <div class="card-body">
-        <h2>ManageRoom</h2>
+        <h2>Manage Room</h2>
 
         @using (Html.BeginForm("ManageRoom", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
@@ -28,7 +28,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.RoomType, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.RoomType, new SelectList(new List<string> { "AC", "NON AC" }), "--Select Room Type--", new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.RoomType, new SelectList(new List<string> { "AC", "NON AC" }), "Select Room Type", new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.RoomType, "", new { @class = "text-danger" })
                     </div>
                 </div>

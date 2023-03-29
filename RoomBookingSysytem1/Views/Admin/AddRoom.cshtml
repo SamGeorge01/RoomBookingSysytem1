@@ -7,7 +7,7 @@
 
 <section class="card" style="background-color: rgba(0, 0, 0, 0.5); color:azure">
     <div class="card-body">
-        <h2>AddRoom</h2>
+        <h2>Add Room</h2>
 
         @using (Html.BeginForm("AddRoom", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
@@ -65,7 +65,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ImageFile, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <input type="file" name="ImageFile" />
+                @Html.TextBoxFor(model => model.ImageFile, new { type = "file", placeholder = Html.DisplayNameFor(model => model.ImageFile), @class = "form-control" })
             </div>
         </div>
 
