@@ -1,166 +1,239 @@
-﻿let form = document.querySelector("form")
+﻿//Function for name field validation
+function Checkfirstname() {
+    var isFname = /^[a-zA-Z]+$/;
+    let fnameinput = document.getElementById("fname");
 
-    // First name Validation/
-function chkFirstname() {
-    let fname = document.getElementById("Firstname");
-    if (fname.value.trim() === "") {
-        error(fname, "Enter Your Firstname");
+    if (fnameinput.value.trim() === "") {
+        setError(fnameinput, "Empty first name");
+    }
+    else if (!isFname.test(fnameinput.value.trim())) {
+        setError(fnameinput, 'Name cannot be a number or special characters');
     }
     else {
-        success(fname);
+        setSuccess(fnameinput);
     }
 }
 
-//Last name Validation/
-function chkLastname() {
-    let lname = document.getElementById("Lastname");
-    if (lname.value.trim() === "") {
-        error(lname, "Enter your Lastname");
+//Lastname validation
+function Checklastname() {
+    var isLname = /^[a-zA-Z]+$/;
+    let lnameinput = document.getElementById("lname");
+
+    if (lnameinput.value.trim() === "") {
+        setError(lnameinput, "Empty Last name");
+    }
+    else if (!isLname.test(lnameinput.value.trim())) {
+        setError(lnameinput, 'Name cannot be a number or special characters');
     }
     else {
-        success(lname);
+        setSuccess(lnameinput);
     }
 }
-//Email Validation/
-function chkemail() {
-    let email = document.getElementById("email");
-    const email_id = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
-    if (email.value.trim() === "") {
-        error(email, "Enter email!");
+
+//Gender validation
+function Checkgender() {
+    var isGender = /^[a-zA-Z]+$/;
+    let fnameinput = document.getElementById("gender");
+
+    if (fnameinput.value.trim() === "") {
+        setError(fnameinput, "Empty Gender");
     }
-    else if (!email.value.match(email_id)) {
-        error(email, "Please enter a valid email address!");
+    else if (!isFname.test(fnameinput.value.trim())) {
+        setError(fnameinput, 'Name cannot be a number or special characters');
     }
     else {
-        success(email);
+        setSuccess(fnameinput);
     }
 }
 
-//Phone Validation/
-function chkphone() {
-    let phone = document.getElementById("phone");
-    const phoneno = /^\d{10}$/;
+//Phone number validation
+function Checkphone() {
+    var isPhone = /^\d{10}$/;
+    let phoneinput = document.getElementById("phone");
 
-    if (phone.value.trim() === "") {
-        error(phone, "Enter contact number");
+    if (phoneinput.value.trim() === "") {
+        setError(phoneinput, "Empty phone number");
     }
-    else if (!phone.value.match(phoneno)) {
-        error(phone, "Invalid number");
+    else if (!isPhone.test(phoneinput.value.trim())) {
+        setError(phoneinput, 'Enter a valid number');
     }
     else {
-
-        success(phone);
+        setSuccess(phoneinput);
     }
 }
 
-//Username Validation/
-function chkusername() {
-    let ul = document.getElementById("Username");
-    let name = document.getElementById("Username").value;
-    const uname = /^[a-zA-Z0-9]([.-](?![.-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$/;
-    var allNames = [];
-    if (ul.value.trim() === "") {
-        error(Username, "Enter username");
+//Email validation
+function Checkemail() {
+    var isEmail = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+    let emailinput = document.getElementById("email");
+
+    if (emailinput.value.trim() === "") {
+        setError(emailinput, "Empty email");
     }
-    else if (!ul.value.match(uname)) {
-        error(Username, "Enter a valid Username");
-    }
-    else if (allNames.includes(name)) {
-        error(Username, "Name already exists");
-        return -1;
+    else if (!isEmail.test(emailinput.value.trim())) {
+        setError(emailinput, 'Enter valid email');
     }
     else {
-        success(ul);
-        allNames.push(name);
+        setSuccess(emailinput);
     }
-
-    var li = document.createElement("li");
-    li.innerHTML = name;
-
-    ul.appendChild(li);
-    document.getElementById("name").value = "";
-
-
 }
 
-//House Address Validation/
-function chkaddress() {
-    let addr = document.getElementById("address");
-    if (addr.value.trim() === "") {
-        error(addr, "Enter Address");
+//Address validation
+function Checkaddress() {
+    let addressinput = document.getElementById("address");
+
+    if (addressinput.value.trim() === "") {
+        setError(addressinput, "Empty Address");
     }
     else {
-        success(addr);
+        setSuccess(addressinput);
     }
 }
+//City validation
+function Checkcity() {
+    var isCity = /^[a-zA-Z]+$/;
+    let cityinput = document.getElementById("city");
 
-//Password Validation/
-function chkPassword() {
-    const passw = /^[A-Za-z]\w{7,14}$/;
-    let p1 = document.getElementById("Password");
-    if (p1.value.trim() === "") {
-        error(p1, "Enter password");
-    }
-    else if (!p1.value.match(passw)) {
-        error(p1, "Enter a strong password that contains at least one numeric digit, one uppercase and one lowercase letter");
+    if (cityinput.value.trim() === "") {
+        setError(cityinput, "Empty city");
     }
     else {
-        success(p1);
+        setSuccess(cityinput);
     }
 }
+//State validation
+function Checkstate() {
+    var isName = /^[a-zA-Z]+$/;
+    let nameinput = document.getElementById("state");
 
-//Confirm Password Validation/
-function chkConfirmpassword() {
-
-    let pwd1 = document.getElementById("Password");
-    let pwd2 = document.getElementById("Confirmpassword");
-
-    if (pwd2.value.trim() === "") {
-        error(pwd2, "Re-enter password");
-    }
-    else if (!pwd2.value.match(pwd1.value)) {
-        error(pwd2, "Passwords does'nt match");
+    if (nameinput.value.trim() === "") {
+        setError(nameinput, "Empty state");
     }
     else {
-        success(pwd2);
+        setSuccess(nameinput);
+    }
+}
+//Pincode validation
+function Checkpincode() {
+    var isPincode = /^\d{10}$/;
+    let pincodeinput = document.getElementById("pincode");
+
+    if (pincodeinput.value.trim() === "") {
+        setError(pincodeinput, "Empty pincode");
+    }
+    else if (!isPincode.test(pincodeinput.value.trim())) {
+        setError(pincodeinput, 'Enter a valid number');
+    }
+    else {
+        setSuccess(pincodeinput);
     }
 }
 
-//Submit button(onclick) Validation/
-function checkvalidate() {
-    chkFirstname();
-    chkLastname();
-    chkemail();
-    chkphone();
-    chkusername();
-    chkaddress();
-    chkPassword();
-    chkConfirmpassword();
+//Username validation
+function Checkusername() {
+    var isName = /^[a-zA-Z]+$/;
+    let nameinput = document.getElementById("username");
+
+    if (nameinput.value.trim() === "") {
+        setError(nameinput, "Empty username");
+    }
+    else {
+        setSuccess(nameinput);
+    }
+}
+
+//Password validation
+function Checkpassword() {
+    var isPwd = /^[A-Za-z]\w{7,14}$/;
+    let pwdinput = document.getElementById("password");
+    if (pwdinput.value.trim() === "") {
+        setError(pwdinput, "Empty password");
+    }
+    else if (!isPwd.test(pwdinput.value.trim())) {
+        setError(pwdinput, 'Enter strong password');
+    }
+    else {
+        setSuccess(pwdinput);
+    }
+}
+
+//Confirm password validation
+function Checkconfirmpassword() {
+    let pwd2input = document.getElementById("confirmpassword");
+    let pwdinput = document.getElementById("password");
+    if (pwd2input.value.trim() === "") {
+        setError(pwd2input, 'Empty password');
+    }
+    else if (pwd2input.value.trim() === pwdinput.value.trim()) {
+        setSuccess(pwd2input);
+    }
+    else {
+        setError(pwd2input, "Password didn't match");
+    }
+}
+
+//Date validation
+function Checkdob() {
+    let dateinput = document.getElementById("dob");
+    if (dateinput.value.trim() === "") {
+        setError(dateinput, "Empty date of birth");
+    }
+    else if (!isDate.test(dateinput.value.trim())) {
+        setError(dateinput, 'Enter valid date');
+    }
+    else {
+        setSuccess(dateinput);
+    }
+}
+
+//Future date disabled
+var todayDate = new Date();
+var month = todayDate.getMonth(); //04 - current month
+var year = todayDate.getUTCFullYear(); //2021 - current year
+var tdate = todayDate.getDate(); // 27 - current date 
+if (month < 10) {
+    month = "0" + month //'0' + 4 = 04
+}
+if (tdate < 10) {
+    tdate = "0" + tdate;
+}
+var maxDate = year + "-" + month + "-" + tdate;
+document.getElementById("dob").setAttribute("max", maxDate);
+document.getElementById("dob").setAttribute("min", "1900-01-01"); //age > 100+
+
+
+//Submit button validation
+function Checkvalidation() {
+    Checkfname();
+    Checklname();
+    Checkdate();
+    Checkgender()
+    Checkemail();
+    Checkphonenumber();
+    Checkcity();
+    Checkstate()
+    Checkpincode();
+    Checkusername();
+    Checkpassword();
+    Checkconfirmpassword();
 }
 
 
-
-//Error Function/
-function error(input, msg) {
-    let submitbtn = document.getElementById("submit");
-    let parent = input.parentElement;
-    let small = parent.querySelector('small');
-    small.className = 'smallshown';
-    small.innerText = msg;
-    submitbtn.disabled = true;
-    parent.classList.add("error");
-    parent.classList.remove("success");
+//Functions for set errors
+function setError(input, message) {
+    let submitbutton = document.getElementById("button")
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    small.className = "smallshown";
+    small.innerText = message;
+    submitbutton.disabled = true;
 }
 
-/*Success function */
-
-function success(input) {
-    let submitbtn = document.getElementById("submit");
-    let parent = input.parentElement;
-    let small = parent.querySelector('small');
-    small.className = 'smallhidden';
+function setSuccess(input) {
+    let submitbutton = document.getElementById("button")
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+    small.className = "smallhidden";
     small.innerHTML = "";
-    submitbtn.disabled = false;
-    parent.classList.remove("error");
-    parent.classList.add("success");
+    submitbutton.disabled = false;
 }

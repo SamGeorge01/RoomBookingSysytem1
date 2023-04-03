@@ -51,6 +51,7 @@ namespace RoomBookingSysytem1.Service
             }
             catch (Exception ex)
             {
+                Console.WriteLine("There is some excpetion   " + ex.Message);       
                 return "Error: " + ex.Message;
             }
         }

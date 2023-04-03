@@ -19,8 +19,7 @@ namespace RoomBookingSysytem1.Models
 
         [Required(ErrorMessage = "Date of Birth is required.")]
         [Display(Name = "Date of Birth")]
-        [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
+        public string dob { get; set; }
 
         [Required(ErrorMessage = "Gender is required.")]
         [Display(Name = "Gender")]

@@ -68,19 +68,19 @@ namespace RoomBookingSysytem1.Controllers
             AddRoomService addroomService = new AddRoomService();
 
             addroomService.ManageRoom(roomManageModel);
-            //if (roomManageModel.ImageFile != null && roomManageModel.ImageFile.ContentLength > 0)
-            //{
-            //    string fileName = System.IO.Path.GetFileName(roomManageModel.ImageFile.FileName);
-            //    string path = System.IO.Path.Combine(Server.MapPath("~/Content/Images/Rooms/"), fileName);
-            //    roomManageModel.ImageFile.SaveAs(path);
-            //}
-            //// Save room image to server
+            if (roomManageModel.ImageFile != null && roomManageModel.ImageFile.ContentLength > 0)
+            {
+                string fileName = System.IO.Path.GetFileName(roomManageModel.ImageFile.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/Content/Images/Rooms/"), fileName);
+                roomManageModel.ImageFile.SaveAs(path);
+            }
+            // Save room image to server
 
 
-            //  return RedirectToAction("Index");
+            return RedirectToAction("Index");
 
 
-            return View();
+            //return View();
         }
 
         public ActionResult BookingDetails()
