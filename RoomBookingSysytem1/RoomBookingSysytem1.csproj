@@ -159,6 +159,7 @@
     <Content Include="Content\images\H101.jpg" />
     <Content Include="Content\images\H102.jpg" />
     <Content Include="Content\SignUp.css" />
+    <Content Include="Content\Style1.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

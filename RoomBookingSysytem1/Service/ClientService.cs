@@ -19,7 +19,7 @@ namespace RoomBookingSysytem1.Service
                 sqlCon.Open();
                 SqlCommand cmd = new SqlCommand("UserDetailsMasterSP", sqlCon);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@StatementType", "Update");
+                cmd.Parameters.AddWithValue("@StatementType", "UpdatePassword");
                 cmd.Parameters.AddWithValue("@userId", userId);
                 cmd.Parameters.AddWithValue("@oldPassword", oldPassword);
                 cmd.Parameters.AddWithValue("@newPassword", newPassword);
